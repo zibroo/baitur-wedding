@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>nurperi &amp; argen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Wedding Invitation" />
+    <meta name="keywords" content="wedding" />
+    <meta name="author" content="Baitur Domonov" />
+    <meta property="og:image" content="images/wedding-invitiation-thumbnail.png" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="Wedding Invitation" />
+    <meta property="og:image" content="images/wedding-invitiation-thumbnail.png" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="Wedding Invitation" />
+    <meta name="twitter:image" content="images/wedding-invitiation-thumbnail.png" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!-- Place images/wedding_rings-512.webp and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="images/wedding_rings-512.webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Elsie" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="css/superfish.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+
+</head>
+
+<style>
+    /* For width smaller than 400px: */
+
+    .fh5co-cover {
+        background-repeat: no-repeat;
+        background-image: url('images/cover_bg_mobile.jpeg');
+    }
+
+    /* For width 400px and larger: */
+
+    @media only screen and (min-width: 600px) {
+        .fh5co-cover {
+            background-image: url('images/cover_bg_1_arg.jpg');
+            
+        }
+    }
+
+    /*Play Music Styling */
+
+    #play,
+    #pause {
+        float: left;
+        width: 30px;
+    }
+
+    #play:hover,
+    #pause:hover {
+        cursor: pointer;
+    }
+
+    #play {
+        display: none;
+    }
+
+    /* Scroll to bottom icon */
+
+    .scroll-down {
+        opacity: 1;
+        -webkit-transition: all .5s ease-in 3s;
+        transition: all .5s ease-in 3s;
+    }
+
+    .scroll-down {
+        position: absolute;
+        top: 350px;
+        left: 50%;
+        margin-left: -16px;
+        display: block;
+        width: 32px;
+        height: 32px;
+        border: 2px solid #FFF;
+        background-size: 14px auto;
+        border-radius: 50%;
+        z-index: 2;
+        -webkit-animation: bounce 2s infinite 2s;
+        animation: bounce 2s infinite 2s;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        transform: scale(1)
+    }
+
+    #play {
+        -webkit-animation: rotationAnime 2s linear infinite;
+        animation: rotationAnime 2s linear infinite;
+    }
+
+    .scroll-down:before {
+        position: absolute;
+        top: calc(50% - 8px);
+        left: calc(50% - 6px);
+        transform: rotate(-45deg);
+        display: block;
+        width: 12px;
+        height: 12px;
+        content: "";
+        border: 2px solid white;
+        border-width: 0px 0 2px 2px;
+    }
+
+    @keyframes bounce {
+        0%,
+        100%,
+        20%,
+        50%,
+        80% {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+        }
+        40% {
+            -webkit-transform: translateY(-10px);
+            -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
+        }
+        60% {
+            -webkit-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+    }
+
+    @keyframes rotationAnime {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio */
+        padding-top: 25px;
+        /* Some padding on top */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /*Save the Date*/
+
+    #saveTheDateBtn {
+        display: inline-block;
+        outline: 0;
+        cursor: pointer;
+        border-radius: 3px;
+        background: #fff;
+        font-size: 20px;
+        line-height: 28px;
+        padding: 12px 20px;
+        text-align: center;
+        transition-duration: .15s;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+        :hover {
+            color: #fff;
+            background: rgb(255, 218, 87);
+        }
+    }
+
+    /*Slider Js - Swiper JS*/
+
+    .swiper {
+        width: 100%;
+        height: 350px;
+    }
+
+    .swiper-slide {
+        padding: 10px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<body>
+
+
+    <div id="fh5co-wrapper">
+        <div id="fh5co-page">
+            <div class="fh5co-hero" data-section="home">
+                <div class="fh5co-cover  text-center centered-background" data-stellar-background-ratio="0.5">
+                    <div class="display-t">
+                        <div class="display-tc">
+                            <div class="container">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="animate-box">
+                                        <h1 class="en">The Wedding</h1>
+                                        <h2>Baitur &amp; Aimeerim</h2>
+                                        <p><span>02.10.2024</span></p>
+                                        <a href="#" class="scroll-down" address="true"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <header id="fh5co-header-section" class="sticky-banner">
+                <div class="container">
+                    <div class="nav-header">
+                        <a href="#" class="js-fh5co-nav-toggle dark"><i></i></a>
+                        <h1 id="fh5co-logo"><a href='/'>&nbsp;&nbsp;Our Wedding</a> <img id="play" onclick="toggleAudio()" src="icons/music-player.png" class="img-fluid" alt="Responsive image"><audio id='player' src='sounds/background-music.mp4'></audio>
+                            <img id="pause" onclick="toggleAudio()" src="icons/sound-off.png" class="img-fluid" alt="Responsive image">&nbsp;&nbsp;
+
+                        </h1>
+
+                        <!-- START #fh5co-menu-wrap -->
+                        <nav id="fh5co-menu-wrap" role="navigation">
+                            <ul class="sf-menu" id="fh5co-primary-menu">
+                                <li class="active"><a href='/'>Home</a></li>
+                                <li><a href="#fh5co-started">Wish Form</a></li>
+                                <li><a href="#fh5co-groom-bride">About Us</a </li>
+								<li><a href="#fh5co-when-where">When &amp; Where</a></li>
+                                <li><a href="#fh5co-gallery">Gallery</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <!-- end:header-top -->
+
+            <!-- About Us Part -->
+            <div id="fh5co-couple" class="fh5co-section-gray">
+                <div class="container">
+                    <div class="row animate-box">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-12 text-center heading-section">
+                                <h2 id="guestGreeting">Dear Guests,</h2>
+                                <h3 id="guestDiv"></h3>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row row-bottom-padded-md animate-box">
+                        <div class="col-md-6 col-md-offset-3 text-center">
+                            <div class="col-md-5 col-sm-5 col-xs-5 nopadding">
+                                <img src="images/groom-main.jpg" class="img-responsive">
+                                <h3>Domonov Baitur</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2 nopadding">
+                                <h2 class="amp-center">❤</i></h2>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5 nopadding">
+                                <img src="images/bride-main.jpg" class="img-responsive" >
+                                <h3>Asanbekova Aimeerim</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row animate-box">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-12 text-center heading-section">
+                                <h2>Are Getting Married</h2>
+                                <h4><strong>2, October, 2024 &mdash; Jalal-Abad, Kyrgyzstan</strong></h4>
+                                <br>
+                                <br>
+                                <h4>We warmly invite you to join us as we begin this new chapter of our lives together, filled with love, laughter, and cherished memories! <br> <br> Your <strong> presence </strong> will make our day complete.
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- 
+            Countdown Part -->
+            <div id="fh5co-countdown">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center animate-box">
+                        <p class="countdown">
+                            <span id="days"></span>
+                            <span id="hours"></span>
+                            <span id="minutes"></span>
+                            <span id="seconds"></span>
+                        </p>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2 text-center animate-box">
+                        <center>
+                            <a title="Save the Date" id="saveTheDateBtn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240724T110000Z%2F20240724T170000Z&details=%D0%91%D0%B0%D0%B9%D0%BB%D0%B0%D0%BD%D1%8B%D1%88%20%D1%82%D0%B5%D0%BB%3A%20996707870775&location=Bishkek%2C%20Kyrgyzstan&text=Wedding%20Day%20-%20Argen%20%26%20Nurperi"
+                                target="_blank" rel="nofollow">Save The
+								Date</a>
+
+                        </center>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Groom and Bride Part -->
+            <div id="fh5co-groom-bride">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                            <h2>About Us</h2>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="couple-wrap">
+                            <div class="col-md-6 nopadding animate-box">
+                                <img src="images/bride-info.jpg" class="img-responsive">
+                            </div>
+                            <div class="col-md-6 nopadding animate-box">
+                                <div class="couple-desc">
+                                    <h3>Aimeerim Asanbekova</h3>
+                                    <p>Nurperi Omorova, the eldest daughter of Koldoshev Mamaadi and Taalaigul Tutueva, originally from Osh, Kyrgyzstan, is now wrapping up her senior year in Business Administration at Sogang University after four years in
+                                        Korea. Nurperi loves exploring cafes and can't get enough of ice americanos. She is known for being kind, straightforward, and super driven to reach her goals. She cherishes time with loved ones and is excited to
+                                        celebrate with family and friends on our big day!</p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding">
+                        <div class="couple-wrap">
+                            <div class="col-md-6 col-md-push-6 nopadding animate-box">
+                                <img src="images/groom-info.jpg" class="img-responsive">
+                            </div>
+                            <div class="col-md-6 col-md-pull-6 nopadding animate-box">
+                                <div class="couple-desc">
+                                    <h3>Baitur Domonov</h3>
+                                    <p>Argen Turatbek uulu, the eldest son of Muratov Turatbek and Arystankulova Tolkunai, originally from Batken, Kyrgyzstan, has been living in Korea for seven years. After completing his undergraduate studies, he began
+                                        his career and now works as a Software Developer at Goodcen. Argen loves both Central Asian and Korean cuisine, and you can often find him exploring new dishes from both cultures. He is excited to celebrate our
+                                        big day with family and friends!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Send Us Your Wishes -->
+            <div id="wishes">
+                <div class="container">
+                    <div class="row padding">
+                        <div class="couple-wrap">
+                            <div class="row text-center animate-box">
+                                <div class="col-md-8 col-md-offset-2 text-center heading-section">
+                                    <div class="swiper mySwiper ">
+                                        <div class="swiper-wrapper ">
+                                        </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fh5co-started" data-stellar-background-ratio="0.5">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row animate-box">
+                        <div class="col-md-8 col-md-offset-2  text-center heading-section ">
+                            <h2>Share Your Wishes</h2>
+                        </div>
+                    </div>
+
+                    <div class="row animate-box">
+                        <div class="col-md-10 col-md-offset-1">
+                            <form class="form-inline" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5g000003eLLh" method="POST">
+                                <input type="hidden" name="oid" value="00D5g000003eLLh">
+                                <input type="hidden" name="retURL" value="https://argenurperi.netlify.app/">
+                                <input type="hidden" name="Wish_Form__c" value="true">
+                                <!-- Hidden field always checked -->
+
+                                <!-- Add additional hidden fields for debugging if necessary -->
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group">
+                                        <label for="last_name" class="sr-only">Last Name</label>
+                                        <input required type="text" class="form-control" id="last_name" name="last_name" placeholder="Name" maxlength="80" size="20">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="00NJ100000135qe" class="sr-only">Wish</label>
+                                        <textarea required id="00NJ100000135qe" name="00NJ100000135qe" class="form-control" placeholder="Your Wish" rows="3" wrap="soft"></textarea>
+                                    </div>
+                                    <button type="submit" onsubmit="addClickHandler()" class="btn btn-primary btn-block">Send Wish</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- When and Where -->
+            <div id="fh5co-when-where" class="fh5co-section-gray">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                            <h2>When &amp; Where</h2>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <!-- <div class="col-md-6 text-center animate-box">
+
+							<h3>'Kyz Uzatuu' Ceremony</h3>
+							<p>Дареги: "Ак-Куу" рестораны, Мырза-Аке айылы, Өзгөн району, Ош шаары.</p>
+							<p>20-07-2024, 17.00 @ Osh, Kyrgyzstan
+							</p>
+
+						</div> -->
+                        <div class="col-md-12 text-center animate-box">
+
+                            <h3>Wedding Ceremony</h3>
+                            <p>Дареги: "Ырыскы" рестораны, Фрунзе 160, Бишкек шаары.</p>
+
+                            <p>24-07-2024, 17.00 @ Bishkek, Kyrgyzstan
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div id="fh5co-when-where" class="fh5co-section-gray">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                            <h2>Our Beautiful Moments </h2>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12 animate-box text-center">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/gOsM3AQoW2Q" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+								</iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12 animate-box text-center">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/rZPD421JAtU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+								</iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP -->
+            <!-- <div id="fh5co-started" data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+
+				<div class="container">
+					<div class="row animate-box">
+						<div class="col-md-8 col-md-offset-2  text-center heading-section ">
+							<h2>RSVP</h2>
+						</div>
+					</div>
+					<div class="row animate-box">
+						<div class="col-md-10 col-md-offset-1">
+							<form class="form-inline"
+								action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D5g000003eLLh"
+								method="POST">
+								<input type="hidden" name="oid" value="00D5g000003eLLh">
+								<input type="hidden" name="retURL" value="https://argenurperi.netlify.app/">
+								<input type="hidden" name="RSVP__c" value="true">
+								<div class="col-md-8 col-md-offset-2">
+
+									<div class="form-group">
+										<label for="last_name" class="sr-only">Last Name</label>
+										<input required type="text" class="form-control" id="last_name" name="last_name"
+											placeholder="Name" maxlength="80" size="20">
+									</div>
+									<div class="form-group">
+										<label for="phone" class="sr-only">Phone Number</label>
+										<input required type="text" class="form-control" id="phone" name="phone"
+											placeholder="Phone Number" maxlength="80" size="20">
+									</div>
+									<button type="submit" class="btn btn-primary btn-block">RSVP</button>
+								</div>
+
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div> -->
+            <!-- Gallery Custom -->
+            <div id="fh5co-gallery">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                            <h2>Gallery</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup image-popup" href="images/cover_bg_mobile.jpeg"><img
+										src="images/cover_bg_mobile.jpeg" class="img-responsive" alt="First Photo"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-11.jpeg"><img
+										src="images/gallery-custom-11.jpeg" class="img-responsive"
+										alt="Nurperi's Birthday Party"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-3.jpeg"><img
+										src="images/gallery-custom-3.jpeg" class="img-responsive"
+										alt="First Photo Booth"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-7.jpeg"><img
+										src="images/gallery-custom-7.jpeg" class="img-responsive" alt="Skiing"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-4.jpeg"><img
+										src="images/gallery-custom-4.jpeg" class="img-responsive"
+										alt="Engagement Day Photo"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-5.jpeg"><img
+										src="images/gallery-custom-5.jpeg" class="img-responsive"
+										alt="Starfield Library Photo"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-8.jpeg"><img
+										src="images/gallery-custom-8.jpeg" class="img-responsive"
+										alt="Hanbok Photo 2"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-2.jpeg"><img
+										src="images/gallery-custom-2.jpeg" class="img-responsive"
+										alt="Photo Booth 3"></a>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery-custom-6.jpeg"><img
+										src="images/gallery-custom-6.jpeg" class="img-responsive"
+										alt="Hanbok Main Picture"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup image-popup" href="images/gallery-custom-01.jpg"><img
+										src="images/gallery-custom-01.jpg" class="img-responsive"
+										alt="Han River Second Photo"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/galllery-custom-1.jpeg"><img
+										src="images/galllery-custom-1.jpeg" class="img-responsive"
+										alt="Second Photo Booth Argen's Birthday"></a>
+                            </div>
+                            <div class="gallery animate-box">
+                                <a class="gallery-img image-popup" href="images/gallery_custom_x.png"><img
+										src="images/gallery_custom_x.png" class="img-responsive"
+										alt="Hanbok Photo 3"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-6 col-md-offset-3 text-center">
+
+                                <p> Developed by Argen Turatbek © 2024
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- END fh5co-page -->
+
+    </div>
+    <!-- END fh5co-wrapper -->
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+    <!-- jQuery -->
+    <script src="dist/scripts.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+</body>
+
+<script>
+    var isContentLoaded = false;
+
+    var swiper = null;
+
+    function toggleAudio() {
+        var audioElement = document.getElementById('player')
+        var soundOn = document.getElementById('play')
+        var soundOff = document.getElementById('pause')
+        if (audioElement.paused) {
+            audioElement.play();
+            $(soundOn).show();
+            $(soundOff).hide();
+        } else {
+            audioElement.pause();
+            $(soundOn).hide();
+            $(soundOff).show();
+        }
+    }
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                type: "fraction"
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        //Display Wishes
+        // const API_KEY = 'AIzaSyBC_JAJ3Mt1qQXYrYfqXi1pVl-PZOIrOMA';
+        // const SHEET_ID = '1QpXMPOMufjVsEw_WubEQzMfGvnJ7n3xKNkSFT4LH2EI';
+        // const RANGE = 'WishForm!A:D'; // Adjust the range according to your sheet structure
+
+        const fetchData = async () => {
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data) {
+                    displayWishes(data.values);
+                }
+            } catch (error) {
+                console.error('Error fetching data: ', error);
+            }
+
+        };
+
+        const displayWishes = (rows) => {
+            if (rows != null) {
+                if (rows.length > 0) {
+                    addContentToSwiperWrapper(rows);
+                } else {
+                    console.log('No data found.');
+                }
+            }
+
+        };
+
+
+        // Function to parse URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(window.location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        // Get the GuestName parameter from the URL
+        var guestNames = getUrlParameter('to');
+
+        // Split guestNames by ' and ' to handle multiple guests
+        var guests = guestNames.split(' and ');
+
+        // Select the greeting div
+        var guestGreetingDiv = document.getElementById('guestGreeting');
+
+        // Select the guest div
+        var guestDiv = document.getElementById('guestDiv');
+
+        // Update greeting message based on number of guests
+        if (guests.length > 1) {
+            guestGreetingDiv.textContent = 'Dear Guests,';
+            guestDiv.textContent = guestNames;
+        } else if (guestNames !== '') {
+            guestGreetingDiv.textContent = 'Dear Guest,';
+            guestDiv.textContent = guestNames;
+        } else {
+            guestGreetingDiv.textContent = 'Dear Guests,';
+            guestDiv.textContent = '';
+        }
+        var scrollDownButton = document.querySelector('.scroll-down');
+        scrollDownButton.addEventListener('click', function() {
+            var audioElement = document.getElementById('player');
+            if (audioElement.paused) {
+                toggleAudio(); // Call toggleAudio only if the music is not playing
+            }
+            var targetElement = document.getElementById('fh5co-header-section');
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+
+
+            return false;
+        });
+
+        window.onscroll = function(e) {
+            if (!isContentLoaded) {
+                fetchData()
+                isContentLoaded = true
+            } else {}
+        }
+
+    });
+
+
+
+
+
+    function addContentToSwiperWrapper(rows) {
+
+        console.log('rows:', rows)
+
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        if (swiperWrapper && rows) {
+            let finalContentHTML = ''
+            for (let i = rows.length - 1; i > 0; i--) {
+                let wishText = rows[i][1],
+                    authorName = rows[i][0],
+                    createdDate = rows[i][2]
+                if (wishText != null) {
+                    const contentHTML = `<div class="swiper-slide">
+										<div class="content-wish">
+											"${wishText}"
+											<br>
+											<br>  ${authorName ? authorName : ''} </br> ${createdDate ? createdDate : ''}
+										</div>
+									</div>`;
+                    finalContentHTML += contentHTML
+                }
+            }
+
+            swiperWrapper.innerHTML = finalContentHTML + swiperWrapper.innerHTML;
+            swiper.update()
+        } else {
+            console.error('No element found with class "swiper-wrapper"');
+        }
+    }
+
+    function addClickHandler() {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Get the values from the form fields
+        let lastName = document.getElementById('last_name').value;
+        let wish = document.getElementById('00NJ100000135qe').value;
+        let dateNow = new Date();
+
+        document.getElementById('last_name').value = ''
+        document.getElementById('00NJ100000135qe').value = ''
+
+        let year = dateNow.getFullYear();
+
+        // Month and day need to be formatted to ensure they have leading zeros if necessary
+        let month = ('0' + (dateNow.getMonth() + 1)).slice(-2); // Months are zero-indexed, so we add 1
+        let day = ('0' + dateNow.getDate()).slice(-2);
+
+        let formattedDate = year + '-' + month + '-' + day;
+        console.log(lastName);
+        console.log(wish);
+
+        console.log('formattedDate', formattedDate)
+
+        let rows = [
+            ['Name', 'Wish', 'CreatedDate'],
+            [lastName, wish, formattedDate]
+        ]
+
+        addContentToSwiperWrapper(rows)
+
+        // Scroll to the wishes section after a delay (e.g., 500 milliseconds)
+        setTimeout(function() {
+            var wishesSection = document.getElementById('wishes');
+            var offset = wishesSection.offsetTop - 120;
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        }, 500); // Adjust the delay time as needed (in milliseconds)
+    }
+</script>
+
+</html>
